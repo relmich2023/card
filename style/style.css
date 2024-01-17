@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap');
+*{
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  box-sizing: border-box;	
+}
+body{
+  font: 16px 'Gothic A1', sans-serif;
+  color:#ffffff;
+  margin: 0;
+  background: #f2f4f5;  
+  height: 100vh;
+}
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  } 
+  
+  h2>span{
+    color: orangered;
+    display: block;
+  }
+  p{
+    margin-bottom: 16px;;
+  }
+.container{
+  width: 100%;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flipper {     
+   
+  }
+  .card {
+    
+  }
+
+  .card-front, .card-back {     
+    position: absolute;
+    top: 0; bottom:0;
+    left: 0; right: 0;
+    padding: 40px 20px 20px;   
+    backface-visibility: hidden;
+
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+  }
+  .card-front {
+    z-index: 2;    
+    transform: rotateY(0deg);
+   /* background: url() ;*/
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .card-back {
+   
+    transform: rotateY(180deg);     
+    color: white;
+  }
+  .flipper:hover .card{     
+    transform: rotateY(-180deg);
+  }
+  .card-title{
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+    flex: 1 1 100%;
+  }
+  .card-desc{
+    line-height: 22px;
+    margin-bottom: 40px;
+    
+  }  
+
+  .card-foot{
+    flex: 1 1 100%;
+    display: flex;
+    align-items: end;
+  }
+  .btn{
+    line-height: 36px;
+    padding: 0 30px;
+    background-color:  orangered;
+    border: 1px solid  orangered;
+    color: white;
+    margin-right: 8px;
+  }
+  .btn-outline{
+    line-height: 36px;
+    padding: 0 30px;
+    border: 1px solid  rgb(255, 255, 254);
+    background-color: transparent;
+    color: white;
+  }
+
+
+  /* Начальные стили для элемента, который будет следовать за курсором */
+.follow-cursor_or {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 1px solid  orangered;
+    border-radius: 50%;
+    transform: translateY(-50%) translateX(-50%); 
+    position: absolute;  
+    z-index: 999; 
+    pointer-events: none; 
+    transition: width 0.64s, height 0.64s, border-radius 0.02s, background 0.64s;
+  } 
+  
+  /* Активный класс для кружка при наведении на ссылку */
+  .follow-cursor_active {
+    height: 38px;
+    width: 38px;
+    border-width: 2px;
+    background:  rgba(242, 241, 241,0.4);
+  }
+  
